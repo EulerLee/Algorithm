@@ -18,10 +18,10 @@ ll quick_pow(ll x, ll n, ll mod)
     while(n) {
         if(n&1) {
             ans *= x;
-            ans = ans%mod;
+            ans %= mod;
         }
         x *= x;
-        x = x%mod;
+        x %= mod;
         n >>= 1;
     }
     return ans;
