@@ -38,10 +38,10 @@ bool Solovay_Strassen(ll N)
 
 int main()
 {
-    /*ll N;
+    ll N;
     cin >> N;
-    cout << boolalpha << Solovay_Strassen(N) << endl;*/
-    RANGE(i, 3, 10000) {
+    cout << boolalpha << Solovay_Strassen(N) << endl;
+    /*RANGE(i, 3, 10000) {
         cout << boolalpha << i << " " << Solovay_Strassen(i) << endl;
-    }
+    }*/
 }

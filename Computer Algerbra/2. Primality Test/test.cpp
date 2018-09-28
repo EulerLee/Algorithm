@@ -21,7 +21,10 @@ bool primetest(ll N)
 
 int main()
 {
-    RANGE(i, 3, 10000) {
+	ll N;
+	cin >> N;
+    cout << boolalpha << primetest(N) << endl;
+    /*RANGE(i, 3, 10000) {
         cout << boolalpha << i << " " << primetest(i) << endl;
-    }
+    }*/
 }
