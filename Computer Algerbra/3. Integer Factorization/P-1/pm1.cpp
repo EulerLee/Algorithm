@@ -36,7 +36,7 @@ vector<int> FB{2};
 int pm1(int N, int a, int B)
 {
     vector<int> vis(840, 0);
-    RANGE(i, 3, B+1) {
+    for(int i = 3; i <= B; i+=2) {
         if(vis[i] == 0) {
             FB.push_back(i);
             for(int k = 1; k*i <= B; ++k) {
@@ -49,16 +49,20 @@ int pm1(int N, int a, int B)
     RANGE(i, 1, 20000) {
         REP(j, FB.size()) {
             if(i%(j+1) == 0) {
-                ++cnt;
                 C *= 1ll*quick_pow(a, FB[j], N);
                 C %= N;
                 cout << cnt+1 << ":\t" << C << endl;
+                ++cnt;
             }
-            if(cnt%20 == 0) {
+            /*if(cnt%20 == 0) {
                 int res = gcd(C-1, N);
                 if(res > 1) {
                     return res;
                 }
+            }*/
+            int res = gcd(C-1, N);
+            if(res > 1) {
+                return res;
             }
         }
     }
@@ -68,10 +72,10 @@ int pm1(int N, int a, int B)
 int main()
 {
     int N, a, B;
-    //cin >> N >> a >> b;
     N = 53467;
     a = 3;
     B = 840;
-
+    //cin >> N >> a >> b;
+    cin >> a;
     cout << pm1(N, a, B) << endl;
 }
