@@ -9,6 +9,36 @@ typedef long double ld;
 #define REP(i, n) for(ll i = 0; i < n; ++i)
 #define RANGE(i, x, n) for(ll i = x; i < n; ++i)
 
+/*
+ * space O(2*N)
+ */
+int cur[5001];
+int pre[5001];
+
+int LCS(vector<int> &A, vector<int> &B)
+{
+    int n = A.size();
+    int m = B.size();
+    REP(i, n+1) {
+        REP(j, m+1) {
+            if(i*j == 0) {
+                cur[j] = 0;
+            }else {
+                if(A[i-1] == B[j-1]) {
+                    cur[j] = pre[j-1] + 1;
+                }else {
+                    cur[j] = max(pre[j], cur[j-1]);
+                }
+            }
+        }
+        memcpy(pre, cur, sizeof pre);
+    }
+    return cur[m];
+}
+
+
+
+
 int len[100][100];
 int nolen[100][100];
 
