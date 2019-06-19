@@ -55,6 +55,7 @@ L和R遍历字符串，每个字符最多被扫描两次，故时间复杂度 O(
     + rank<sub>k</sub>[i]表示从 i 开始长度为 k 的子串是第几小的，要计算rank<sub>2k</sub>[i]，只需要比较rank<sub>k</sub>[i]和rank<sub>k</sub>[i+k]的数对，和其他(j &ne; i)rank<sub>k</sub>[j]和rank<sub>k</sub>[j+k]的数对
     + 时间复杂度 O(nlog<sup>2</sup>n)，空间复杂度 O(2n)
 + SA-IS
++ Skew
 
 #### 2.2 基于后缀数组的字符串匹配
 [./Suffix/strcmp_suffix.cpp](./Suffix/strcmp_suffix.cpp)</br>
